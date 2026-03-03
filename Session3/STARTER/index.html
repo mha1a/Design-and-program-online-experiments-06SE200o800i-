@@ -5,16 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My page</title>
+    <link rel="stylesheet" href="myFirstCSS.css">
 </head>
+<style>
+h3 {
+color: yellowgreen;
+}
+</style>
 <body>
     <h1>My main heading</h1>
     <p>line one.<br>line two.</p>
     <p>A paragraph with <strong>bold</strong> text.</p>
     <p>A paragraph with <em>italic</em> text.</p>
 
-    <div>
+    <div style="color: blue; text-align: center;">
+     <p style="font-size: 50px">
         <h2>Generic grouped content</h2>
-        <p>Another paragraph inside a div.</p>
+        Another paragraph inside a div.</p>
     </div>
     <hr>
     <h3>heading after the horizontal line.</h3>
@@ -36,5 +43,28 @@
         <li>item 2</li>
         <li>item 3</li>
     </ol>
+<br>
+    <form>
+<label>Text:</label>
+<input type="text" placeholder="default" required>
+<br><label>Number:</label>
+<input type="number" min="18" max="35">
+<br><label>Range:</label>
+<input type="range" min="1" max="5">
+<br><label>Checkbox|radio:</label>
+<input type="checkbox" >|<input type="radio">
+<input type="submit">
+<input type="reset" value="Reset">
+<br><label>Week:</label><input type="week">
+<br><label>Password:</label><input type="password" value="password">
+</form>
+
+<label>Choose your fighter:</label>
+<select name="input" id="input type">
+    <option value="option1">Nr1</option>
+    <option value="option2">Nr2</option>
+    <option value="option3">Nr3</option>
+</select>
+
 </body>
 </html>
