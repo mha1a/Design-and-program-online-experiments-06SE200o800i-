@@ -27,6 +27,8 @@ git merge upstream/main
 
 git push origin main
 
+#### 1.2  If you encounter conflict merge, please either see git_merge_conflict.html or Session1/STARTER/create_your_folder_md/If you ever have a Git divergence issue...
+
 ### 2. Never Edit the STARTER Files Directly
 
 Under each session folder, you'll find a STARTER folder containing the exercise materials. 
