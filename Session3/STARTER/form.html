@@ -39,9 +39,9 @@
        <h3>Tiredness Rating</h3>
        <p>How tired are you right now? </p>
        <p>(1-Not at all;5-Too tired to do anything)</p>
-       <input type="range" min="1" max="100" >
+       <input type="range" min="1" max="5" >
 
-      <h3>Happyness Rating</h3>
+      <h3>Happiness Rating</h3>
       <p id="happiness-q">How happy are you right now?</p>
 
           <label class="likert-option">
@@ -87,7 +87,9 @@
         
       <!-- 3.2.5 change the color of 'Submit To Continue' to blue externally using id; and change the background-color of all class="final" to beige-->
       <input id="submit_button" type="button" value="Submit To Continue" class="final">
-  
+      <form action="example_task_instruction.html" method="post">
+  <button type="submit">Submit to continue</button>
+</form>
 
         <!-- # plus 1: make personal information inputs (ID, age, gender) mandatory/required. -->   
         <!-- # plus 2: use inline css to make/add asterisk in red to indicate that it is required.-->
