@@ -1,4 +1,12 @@
 *{
-    color: blue;
+    color: black;
     text-align: center;
+
+}
+#submit_button {
+    color: blue;
+}
+
+.final {
+    background-color: beige;
 }
