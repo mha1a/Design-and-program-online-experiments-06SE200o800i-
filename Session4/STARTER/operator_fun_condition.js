@@ -12,8 +12,8 @@ console.log(example); // ? -> 10
 
 let a = 8;
 let b = 2;
-console.log(a+b); // ?
-console.log(8**2); // ?
+console.log(a+b); // 10 (8+2)
+console.log(8**2); // 64 (8x8)
 
 
 /* 4.2.2: Equality and Strict Equality:
@@ -21,10 +21,10 @@ First, work out from what you understand by replacing the ? with your expected o
 let x = 5;
 let y = "5";
 
-console.log(x == y);  // ?
-console.log(x === y); // ?
-console.log(x != y);  // ?
-console.log(x !== y); // ?
+console.log(x == y);  // true
+console.log(x === y); // false
+console.log(x != y);  // false they are not inequal
+console.log(x !== y); // true, they are inequal
 
 
 /* 4.2.3: logical operators:
@@ -32,14 +32,14 @@ First, work out from what you understand by replacing the ? with your expected o
 let isAdult = true;
 let hasNormalVision = false;
 
-console.log(isAdult && hasNormalVision); // ?
-console.log(isAdult || hasNormalVision); // ?
+console.log(isAdult && hasNormalVision); // true and fals = false
+console.log(isAdult || hasNormalVision); // true or fals = true
 
 let score = 50;
 
-console.log(score > 40 && score < 60);  // ?
-console.log(score * 2 === 100);         // ?
-console.log(score % 2 === 0 || score < 0); // ?
+console.log(score > 40 && score < 60);  // is >40 and <60 = true
+console.log(score * 2 === 100);         // 50x2 =100 = true
+console.log(score % 2 === 0 || score < 0); // 50:2 remainder 0 = true or 50<0 = false -> true
 
 
 /* 4.2.4: what this newFunction will return:  
@@ -50,10 +50,10 @@ function newFunction(a,b) {
     return { a, b, c};
 }
 let myResults = newFunction(1, 3);
-console.log("my results:", myResults); // ?
+console.log("my results:", myResults); // 4?  don't get this one
 
 /* 4.2.5: Verify your answers by running the JavaScript script in operator.html. Open the browser's developer console and check the logged output. Compare the results with the expected answers from the previous steps. */
-
+//got all except the myresults
 
 /* 4.2.6: 
 YOUR TASK is to use a conditional statement (e.g., if-else) or a conditional operator (e.g., ternary operator) to evaluate the participant's age.
@@ -78,8 +78,8 @@ Then, uncomment two console.log()lines to check your answers.
 */
 let value = "5";
 let result = value * 2;
-// console.log(result);        // ?
-// console.log(typeof result); // ?
+// console.log(result);        // 55 cuz string
+// console.log(typeof result); // string
 // When a string is used in an arithmetic operation, JavaScript attempts to convert it into a number.
 
 /* # Plus 2: Arithmetic Operation, Type Coercion and Strict Equality 
@@ -95,9 +95,9 @@ let totalPoints = points + bonus;
 let isEqual = totalPoints == 105;  
 let isStrictEqual = totalPoints === 105; 
 
-// console.log(totalPoints);   // ?
-// console.log(isEqual);       // ?
-// console.log(isStrictEqual); // ?
+// console.log(totalPoints);   // 105
+// console.log(isEqual);       // true cuz converts correctly
+// console.log(isStrictEqual); // false cuz string n numbers
 
 
 /* Plus 3: 
@@ -119,6 +119,8 @@ YOUR TASK is to:
     let hasParticipatedBefore = false; // or True
     let hasNormalVisionOrNot = true;
     let hasCognitiveImpairment = false;
+
+    auch mit if else so cant bearbeiten yet!!
 */
 
     let ageInput = 25; // or 17                                         
@@ -126,21 +128,21 @@ YOUR TASK is to:
     let hasNormalVisionOrNot = true;
     let hasCognitiveImpairment = false;
     console.log("age:", ageInput, "participated before?", hasParticipatedBefore, "normal vision:",hasNormalVisionOrNot, "cognitive impairment:",hasCognitiveImpairment)
-    // will this be eligible?
+    // will this be eligible? yeah
 
     ageInput = 17;                                         
     hasParticipatedBefore = false; // or True
     hasNormalVisionOrNot = true;
     hasCognitiveImpairment = false;
     console.log("age:", ageInput, "participated before?", hasParticipatedBefore, "normal vision:",hasNormalVisionOrNot, "cognitive impairment:",hasCognitiveImpairment)
-    // will this be eligible?
+    // will this be eligible? nah cuz 17
 
     ageInput = 25;                                         
     hasParticipatedBefore = true; 
     hasNormalVisionOrNot = true;
     hasCognitiveImpairment = false;
     console.log("age:", ageInput, "participated before?", hasParticipatedBefore, "normal vision:",hasNormalVisionOrNot, "cognitive impairment:",hasCognitiveImpairment)
-    // will this be eligible?
+    // will this be eligible? nah cuz participated before
 
 
 
