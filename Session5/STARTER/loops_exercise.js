@@ -8,17 +8,24 @@
  
  // Using a for loop, to get the data only stores your reaction time
  // console.log each iterate index and each reactionTime value accordingly in the loop
- let reactionTimes = [];
- // add your code here
-
-
+ let reactionTimes = [550, 490, 510, 890, 1450, 470, 940, 620, 930, 360];
+for (let i = 0; i < 5; i++) {
+    reactionTimes[i] = recordedTimes[i] - 200;
  console.log("reactionTimes: ",reactionTimes);
+}
+
+
+
 
 
  
  /* # Plus 1: can you think of more than one way of doing it? */
  
- 
+ let i = 0; // Initialize the counter
+while (i < 5) {
+console.log(`Number: ${i}`);
+i++; // Increment the counter
+}
  
  
  
