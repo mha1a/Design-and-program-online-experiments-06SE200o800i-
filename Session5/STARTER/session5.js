@@ -1,17 +1,24 @@
-// ex.1 
 // let ageGroup;
-//if (age < 18) {
-//ageGroup = "Child";
-//} else {
-//ageGroup = "Adult";
-//}
-//console.log("ageGroup:", ageGroup);
+// let age = 10; 
+// // age = 25;
+// if(age < 18){
+//     ageGroup = "Child";
+// }else{
+//     ageGroup = "Adults";
+// }
+// console.log("the ageGroup in if-else: " ,ageGroup );
+// //if I test now (put in ageGroup in COnsole in inspect) child will pop up
 
-let age = 18;
-let ageGroup = age < 18 ? "Child" : "Adult";
-console.log("ageGroup:", ageGroup);
+// age = 18
+// ageGroup = age < 18? "child":"adult";
+// console.log("the ageGroup in operator: " ,ageGroup );
+// //zaehlt als adult
 
-for (let i = 0; i < 5; i++) {
-    // console.log('Number:${i}');
-    console.log("i/number", i+1);//ka mit dem +1 bro
+
+const trial = { id: 1, responseTime: 350, correct: true };
+console.log(trial.id);
+console.log(trial["id"]);
+for (const key in trial){
+    console.log(`${key}: ${trial[key]}`);
 }
+//idk which excercise this is from atp

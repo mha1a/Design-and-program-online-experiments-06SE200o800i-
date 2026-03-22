@@ -3,10 +3,13 @@
 //complete following named function called isFasterThanThreshold 
 // that takes the reaction time (responseTime) as an input parameter.
 // It should return "too fast" if the reaction time is faster than the threshold, otherwise "valid".
+  // Write logic to check if the reaction time is faster than the threshold
+
+  //von solutiions. had it right but result has to be a const to be able to return
 const threshold = 300; 
 function isFasterThanThreshold(responseTime) {
-    // Write logic to check if the reaction time is faster than the threshold
-
+    const result = responseTime < threshold? "too fast":"valid"; 
+    return result;
   }
   
 // Call the function with different inputs
@@ -19,11 +22,17 @@ console.log(`Expected output: ${isFasterThanThreshold(400)}`)
 
 // Write a function that calculates the average reaction time from an array of six response times. 
 // call the function e.g., calculateAverageRT(responseTimes); .
-
-// Write your function here
-
-
-
+//i eif counter variable, von da start eif. for..of eif art von loop
+function calculateAverageRT(responseTimes){
+  let totalTime = 0;
+  let i = 0
+  for(time of responseTimes){
+    totalTime += time;
+    i ++; 
+  }
+  return totalTime/i;
+}
+  
   // Example input
   let responseTimes = [100, 200, 300, 400, 500,600];
   const avgTime = calculateAverageRT(responseTimes); 
