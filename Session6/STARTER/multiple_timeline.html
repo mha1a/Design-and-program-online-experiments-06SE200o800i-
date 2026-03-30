@@ -42,10 +42,11 @@
         stimulus: 'End',
         choices: "NO_KEYS"
       };
-     
+     timeline.push(trial1, trial2, trial_end);
+     console.log(timeline);
 
       // run timeline
-      jsPsych.run();
+      jsPsych.run(timeline);
 
   
     </script>
