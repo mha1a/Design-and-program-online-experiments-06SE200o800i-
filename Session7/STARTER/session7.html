@@ -14,18 +14,53 @@
     <title>Session 7</title>
 </head>
 <body>
-        //Step 1: add script for experiment 
+        // Step 1: add script for experiment 
+        // Step 2: initiate jsPsych instance and assign to a variable 
+        // Step 3:  build your timeline
+        // Step 4: run your jsPsych
+        <script>
+        
+const jsPsych = initJsPsych();
+const timeline = []; //grad noch leer, aber ist ein array of stuff
+
+const fixation ={
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: "<h1>+</h1>", //texteingabe mit style (heading)
+    choices: "NO_KEYS",
+    trial_duration: jsPsych.randomization.sampleWithoutReplacement([1000, 2000, 3000], 1)[0]
+//immer in ms gelesen =1s. sollte 1000,2000 or 3000 sein
+}
+//have to add that to timeline
+//timeline.push(fixation);
+
+
+
+function drawFn(canvas){
+const ctx = canvas.getContext("2d");
+console.dir(ctx);
+ctx.fillStyle = "lightblue";
+ctx.fillRect(500,500,100,50);
+ctx.strokeStyle ="black"; //outline
+ctx.strokeRect(500,500,100,50);
+ctx.clearRect(500,500,10,10);
+
+}
+
+const canvasTrial ={
+    type: jsPsychCanvasKeyboardResponse,
+    canvas_size: [window.innerHeight, window.innerWidth], //always start with height idk why
+    stimulus: drawFn,
+    choices: "9",
+    trial_duration: 5000 //you can also not fill this in if it's just dependent on the key
+
+}
+   
+//timeline.push(canvasTrial);
+
+jsPsych.run(timeline)
+
+        </script>
   
-
-        // step 2: initiate jsPsych instance and assign to a variable 
-
-
-        //Step 3:  build your timeline
- 
-
-
-        //Step 4: run your jsPsych
-
 
 </body>
 </html>

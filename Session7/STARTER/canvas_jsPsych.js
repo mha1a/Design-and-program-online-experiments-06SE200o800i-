@@ -8,8 +8,11 @@
 // plus 1: draw an easter egg (with some decoration) next to the bunny 
 
 //step 2:  initiate jsPsych
+const jsPsych = initJsPsych();
+const timeline = [];
 
 // step 3: building timeline 
+
 
 // instruction 
 const instruction = {
@@ -27,7 +30,7 @@ const fixation = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: "+",
     choices: "NO_KEYS",
-    trial_duration: 1000
+    trial_duration: jsPsych.randomization.sampleWithoutReplacement([1000, 2000, 3000], 1)[0]
 }
 timeline.push(fixation);
 
@@ -95,6 +98,13 @@ const drawBunnyfn = function (canvas){
 
 }
 
+const bunny_trial = {
+    type: jsPsychCanvasKeyboardResponse,
+    stimulus: drawBunnyfn,
+    choices: "NO_KEYS",
+    trial_duration: 2000
+}
+timeline.push(bunny_trial);
 
 const end = {
     type: jsPsychHtmlKeyboardResponse,
@@ -104,7 +114,41 @@ const end = {
 }
 timeline.push(end)
 
+
+const drawSmiley = function(canvas){
+    const ctx = canvas.getContext("2d");
+    let x = canvas.width/2;
+    let y = canvas.height/2;
+
+    // face
+    ctx.beginPath();
+    ctx.arc(x, y, 50, 0, 2*Math.PI);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+
+    // eyes
+    ctx.beginPath();
+    ctx.arc(x-20, y-10, 5, 0, 2*Math.PI);
+    ctx.arc(x+20, y-10, 5, 0, 2*Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    // mouth
+    ctx.beginPath();
+    ctx.arc(x, y+10, 20, 0, Math.PI);
+    ctx.stroke();
+}
+
+const smiley_trial = {
+    type: jsPsychCanvasKeyboardResponse,
+    stimulus: drawSmiley,
+    choices: "NO_KEYS",
+    trial_duration: 2000
+};
+
+timeline.push(smiley_trial);
+
+
 // step 4: run the timline
-
-
+jsPsych.run(timeline)
 
