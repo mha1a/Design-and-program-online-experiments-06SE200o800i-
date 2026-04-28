@@ -15,15 +15,16 @@
     <h2 id="welcome"> Welcome </h2>
     <script>
 
-      // //starting example
-      // const myHeadingContent = "Hello, DOM!"; 
-      // const heading = document.getElementsByTagName("h1")[0]; // there can be possible multiple h1, therefore, you need to access a specific element. 
-      // heading.textContent += ": ";
-      // heading.textContent += myHeadingContent;
+    //   //starting example
+    //   const myHeadingContent = "Hello, DOM!"; 
+    //   const heading = document.getElementsByTagName("h1")[0]; // there can be possible multiple h1, therefore, you need to access a specific element. 
+    //   heading.textContent += ": "; //eif for styling
+    //   heading.textContent += myHeadingContent;
 
       /* 9.1.2 */
       // use getElementById() & . textContent to achieve the same goal as in the starting example
-
+document.getElementById("my-heading").textContent += ": Hello, DOM session 9"; // += is adden. reassign waere eif =
+document.getElementById("welcome").textContent += "xxx";
       
     </script>
 
@@ -56,7 +57,7 @@
                 }, 1000);
             }
           };
-        //   timeline.push(countdown);
+          timeline.push(countdown); //starts countdown on html
 
           const progress_duration = 2000
           const progressTrial = {

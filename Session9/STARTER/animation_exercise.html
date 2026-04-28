@@ -40,7 +40,12 @@
                     // TODO: 
                     // 1. clear canvas use ctx.clearRect(0, 0, canvas.width, canvas.height)
                     // 2. draw a red circle at (x, y) with given radius
-                    
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2); // muss times 2 sein weil sonst halber kreis
+                ctx.fillStyle = "purple";
+                ctx.fill();
+                ctx.closePath();
                  
                 }
 
@@ -64,23 +69,26 @@
 
 
                 // 9.2.2 create the animation using requestAnimationFrame & it will run for 3s, then stop
-                function animate(timestamp) {
+                function animate(timestamp) { //eif function? what time it is now so it knows when to end or such
                     if (!startTime) startTime = timestamp;
                     const elapsed = timestamp - startTime;
 
                     // Run for 3 seconds, then stop
                     if (elapsed < 3000) {
-              
-
+                        drawBall();
+                        updatePosition();
+                        applyBouncing();
+                        animationId = requestAnimationFrame(animate);
 
                     } else {
                         // End animation
-                    
+                    cancelAnimationFrame(animationId);
+                    //could add finishTrial
                     }
                 }
 
-                // Start the animation
-            
+                // Start the animation request
+            requestAnimationFrame(animate);
 
             }
         };
